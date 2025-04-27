@@ -28,8 +28,8 @@ class ScaleMancerState(TypedDict, total=False):
 
 
 # ---------- LLM Setup (LangChain v0.3 / langchain_ollama) ----------
-# llm = ChatOpenAI(model="gpt-4o-mini", temperature=0, openai_api_key=os.getenv("OPENAI_API_KEY"))
-llm = ChatOpenAI(model="llama3.1:8b", temperature=0.1)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0, openai_api_key=os.getenv("OPENAI_API_KEY"))
+# llm = ChatOpenAI(model="llama3.1:8b", temperature=0.1)
 
 # ---------- Dummy External Interaction Functions ----------
 
