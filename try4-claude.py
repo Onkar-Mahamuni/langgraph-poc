@@ -5,6 +5,8 @@ from langchain.schema import OutputParserException
 from langchain_core.runnables import RunnableLambda
 from langchain_openai import ChatOpenAI
 from langchain_ollama import ChatOllama
+from IPython.display import Image, display
+from langchain_core.runnables.graph import CurveStyle, MermaidDrawMethod, NodeStyles
 import pandas as pd
 from prophet import Prophet
 import random
@@ -279,7 +281,7 @@ def fetch_data_node(state):
 #     print("Fetching server specifications...")
 #     server_role = state.get("server_role") or "all"
 #     server_specs = fetch_server_specs(server_role)
-    
+
 #     return {**state, "server_specs": server_specs}
 
 def forecast_node(state):
@@ -530,6 +532,7 @@ graph.set_finish_point("Unknown")
 
 # Compile the graph
 app = graph.compile()
+print(app.get_graph().draw_mermaid())
 
 # ---------- Main ----------
 if __name__ == "__main__":
